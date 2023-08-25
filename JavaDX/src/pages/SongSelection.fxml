@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressHandler" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SongSelectionController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/images/SongSelectBackground.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="574.0" layoutY="105.0" text="SELECT SONG">
+         <font>
+            <Font name="System Bold" size="70.0" />
+         </font>
+      </Label>
+      <StackPane fx:id="BackButton" layoutY="14.0" onMouseClicked="#backButtonHandler" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #F9F9F9;">
+         <effect>
+            <DropShadow offsetX="3.0" offsetY="3.0">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/images/angle-left.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </StackPane>
+      <HBox fx:id="partnerButton" alignment="CENTER_LEFT" layoutX="100.0" layoutY="14.0" minWidth="300.0" onMouseClicked="#partnerButtonHandler" prefHeight="100.0" spacing="20.0" style="-fx-background-color: #F9F9F9;">
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="30.0" top="10.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/images/user.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="username" text="USERNAME">
+               <font>
+                  <Font name="Impact" size="48.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" offsetX="3.0" offsetY="3.0">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+      <StackPane fx:id="SettingButton" layoutX="1500.0" layoutY="14.0" onMouseClicked="#settingButtonHandler" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #F9F9F9;">
+         <effect>
+            <DropShadow offsetX="3.0" offsetY="3.0">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/images/settings.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </StackPane>
+      <VBox fx:id="PrevButton" alignment="CENTER" layoutY="401.0" onMouseClicked="#prevButtonHandler" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/images/angle-left.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </VBox>
+      <VBox fx:id="PrevSong" layoutX="150.0" layoutY="272.0" scaleX="0.9" scaleY="0.9" AnchorPane.leftAnchor="150.0">
+         <children>
+            <VBox fx:id="PrevBG" alignment="TOP_CENTER" onMouseClicked="#prevButtonHandler" prefHeight="370.0" prefWidth="350.0" style="-fx-background-color: #22ad39;">
+               <padding>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <ImageView fx:id="PrevImage" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../res/images/homestay.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="PrevDifficulty" text="BASIC" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="350.0" style="-fx-background-color: #F9F9F9;">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <children>
+                  <Label fx:id="PrevName" alignment="CENTER" text="SONG NAME">
+                     <font>
+                        <Font name="Impact" size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label fx:id="PrevArtist" alignment="CENTER" graphicTextGap="0.0" text="Artist name">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="SelectSong" layoutX="625.0" layoutY="272.0">
+         <children>
+            <VBox fx:id="SelectBG" alignment="TOP_CENTER" onMouseClicked="#playSong" prefHeight="370.0" prefWidth="350.0" style="-fx-background-color: #22ad39;">
+               <padding>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <ImageView fx:id="SelectImage" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../res/images/homestay.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="SelectDifficulty" text="BASIC" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="350.0" style="-fx-background-color: #F9F9F9;">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <children>
+                  <Label fx:id="SelectName" alignment="CENTER" text="SONG NAME">
+                     <font>
+                        <Font name="Impact" size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label fx:id="SelectArtist" alignment="CENTER" graphicTextGap="0.0" text="Artist name">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="NextSong" layoutX="1100.0" layoutY="272.0" scaleX="0.9" scaleY="0.9" AnchorPane.rightAnchor="150.0">
+         <children>
+            <VBox fx:id="NextBG" alignment="TOP_CENTER" onMouseClicked="#nextButtonHandler" prefHeight="370.0" prefWidth="350.0" style="-fx-background-color: #22ad39;">
+               <padding>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <ImageView fx:id="NextImage" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../res/images/homestay.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="NextDifficulty" text="BASIC" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="350.0" style="-fx-background-color: #F9F9F9;">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <children>
+                  <Label fx:id="NextName" alignment="CENTER" text="SONG NAME">
+                     <font>
+                        <Font name="Impact" size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label fx:id="NextArtist" alignment="CENTER" graphicTextGap="0.0" text="Artist name">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="NextButton" alignment="CENTER" layoutX="1500.0" layoutY="401.0" onMouseClicked="#nextButtonHandler" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="@../../res/images/angle-left.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </VBox>
+      <HBox layoutY="786.0" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: rgba(0, 0, 0, 0.3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 5;" text="A" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.3015267252922058" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label prefHeight="60.0" text="Previous">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 5;" text="D" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.3015267252922058" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label prefHeight="60.0" prefWidth="83.0" text="Next">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 5;" text="Q" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.3015267252922058" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label prefHeight="60.0" text="- Difficulty">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 5;" text="E" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.3015267252922058" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label prefHeight="60.0" text="+ Difficulty">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="103.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 5;" text="ENTER" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.3015267252922058" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label prefHeight="60.0" text="Select Song">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
